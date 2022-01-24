@@ -10,17 +10,14 @@
                     </div>
                     <div>
                         {{-- ユーザ詳細ページへのリンク --}}
-                        <ul class="dropdown-menu dropdown-menu-right">
-                                {{-- ユーザ詳細ページへのリンク --}}
-                                <li class="dropdown-item">{!! link_to_route('users.show', 'My profile', ['user' => Auth::id()]) !!}</li>
-                                <li class="dropdown-divider"></li>
-                                {{-- ログアウトへのリンク --}}
-                                <li class="dropdown-item">{!! link_to_route('logout.get', 'Logout') !!}</li>
-                            </ul>
+                        <p>{!! link_to_route('users.show', 'View profile', ['user' => $user->id]) !!}</p>
                     </div>
                 </div>
             </li>
         @endforeach
     </ul>
+    
+    {{-- ページネーションのリンク --}}
     {{ $users->links() }}
+    
 @endif
