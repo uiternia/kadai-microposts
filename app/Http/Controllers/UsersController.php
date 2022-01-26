@@ -6,8 +6,21 @@ use Illuminate\Http\Request;
 
 use App\User; // 追加
 
+use Illuminate\Support\Facades\Auth;
+
+
 class UsersController extends Controller
 {
+    
+    public function withdrawal()
+   {
+       $user = Auth::user();
+       $user->delete();
+       Auth::logout();
+       return redirect(route('login'));
+   }
+   
+   
     public function index()
     {
         // ユーザ一覧をidの降順で取得
@@ -96,5 +109,12 @@ class UsersController extends Controller
             'microposts' => $favorites,
         ]);
     }
+    
+    public function destroys()
+    {
+        return view('users.destroy');
+    }
+    
+    
 }
 

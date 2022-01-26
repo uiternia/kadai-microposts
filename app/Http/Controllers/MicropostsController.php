@@ -40,6 +40,9 @@ class MicropostsController extends Controller
         // 前のURLへリダイレクトさせる
         return back();
     }
+    
+   
+    
     public function destroy($id)
     {
         // idの値で投稿を検索して取得

@@ -23,6 +23,8 @@
                             {!! Form::close() !!}
                         @endif
                         @include('user_favorite.favorite_button')
+                        {{-- メッセージ編集ページへのリンク --}}
+    
                     </div>
                 </div>
             </li>
